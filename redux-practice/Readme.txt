@@ -60,3 +60,7 @@ Typically we can do different actions inside the same reducer based on the actio
 --------------------------------------------------------------------------------------------
 For connecting react with redux we have to install a 3rd party package calledd "react-redux", 
 for that run this following command ---> npm install redux react-redux
+
+1. Create store
+2.Create reducer
+3.Provide 
