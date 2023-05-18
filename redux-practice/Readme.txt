@@ -63,4 +63,12 @@ for that run this following command ---> npm install redux react-redux
 
 1. Create store
 2.Create reducer
-3.Provide 
+3.Provide reducer for our store
+
+----------------------------------------------------
+Now how can we provide the store for components
+----------------------------------------------------
+
+We have to import Provider at root component (App component) for keep available store to the all components.
+It is not mandatory to provide store to all components, but may be tha case where if state need all components the we should keep that store available to all components.
+We have to pass a store as prop on provider component to say which store we have to give to all components.
