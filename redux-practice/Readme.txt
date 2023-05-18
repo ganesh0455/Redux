@@ -117,3 +117,74 @@ const dispatch = useDispatch();
 So abouve "dispatch" is a function.
 
 Now when we call that dispatch() function which will dispatch and action agains our Redux store.
+
+
+-----------------------------------------
+Redux with Class Based Components
+-----------------------------------------
+The hooks are not usable in Class Based Components.
+
+now for connecting redux in Class Based Components, Redux will exports a function called as "connect".
+connect is a function that will connect Class based components to the Redux store.
+We could use "connect" for functional components to but the hooks are more convinient than "connect" function.
+
+Now we should not export as usual like ---> export default Counter, but we need to export like below.
+
+Instead we call connect and now connect when executed,will actually return a new function as a value,which we then execute again.And then we pass our component to that returned function as our argument.
+here connct() is also called as so-higher order function.
+
+export connect()(Counter)
+
+
+Now We execute the connect function.It then returns a new function,and we execute this returned, this new function as well.
+
+And to this returned function, we pass counter.
+
+Now, why do we do it like this?
+
+Because to connect, when we execute this,we also pass something.
+
+Connect also wants TWO arguments to be precise,and both arguments are functions.
+
+The first function is a function that maps Redux state to props, which will be received in this component then.Hence we call this function map state to props.
+
+That's not a name you must use,but a convention which you will see in a lot of projects.
+
+Now, this is a function which receives the Redux state,and then this returns an object where the keys will be available as props in the receiving component.
+
+So in the counter component, and the values of those keys,that is then the logic for drilling into that Redux state.So here we could expose a counter prop by using counter
+
+as a key here(in object), this key named therefore is up to you.And the value is state.counter.
+
+So we then pick the counter value from the Redux state,and bind that value to the counter prop.
+
+That's what we do here in the end.And that's of course, similar to what we do with use selector.
+
+Here we also get the state and drill into the state to get the counter,and then store that in a counter const.
+
+That's basically the equivalent when not doing it with hooks, but with the connect function.
+
+Because now map state to props is the first argument we pass to connect.
+
+
+The second argument is another function,which is typically called map dispatch to props.
+
+It's the equivalent to use dispatch.Now the idea is to store dispatch functions in props.
+
+So that in the counter component, we have certain props which we can execute as a function, which will then when executed dispatch an action to the Redux store.
+
+For this map dispatch to props receives the dispatch function as an argument automatically,just like map states to props.
+
+The map dispatch to props function will be executed for you by Redux.
+
+And then in here, we also return an object where the keys are prop names which we can then use in the component.
+
+So for example, increment as a name,and the value is then another function in which we call dispatch and then set up our action.
+
+Now, for example here,an action where the type is increment.
+
+This might look strange, but in the end, this ensures that in the counter component, we'll have an increment prop which we can use.
+
+This prop holds this function,so we can execute this function from inside the component thereafter.
+
+And when we do so, we will call dispatch and dispatch does action.

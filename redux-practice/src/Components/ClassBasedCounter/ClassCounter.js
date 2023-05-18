@@ -4,18 +4,16 @@ import { connect } from "react-redux";
 
 class ClassCounter extends Component {
 
-    // const dispatch = useDispatch();
-    // const counter=useSelector(state=>state.counter);
-
-    toggleCounterHandler = () => {};
-
+    
     incrementHandler = () => {
         this.props.increment();
     };
     decrementHandler() {
         this.props.decrement();
     };
-
+    
+    toggleCounterHandler = () => {};
+    
     render(){
         return (
             <main className={classes.counter}>
