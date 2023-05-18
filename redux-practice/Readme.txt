@@ -102,3 +102,18 @@ That's why use selector is a very useful hook and why it is the hook we use for 
 If you ever would unmount this component if it would be removed from the DOM for whatever reason, React Redux would also automatically clear the subscription for you.
 
 So it manages that subscription for you behind the scenes.
+
+
+------------------------------------------------
+Dispatching actions from inside the Components
+------------------------------------------------
+Now for increase and decreasing the counter value by clicking on the button we have to dispatch the actions.
+For that we need a another hook called as useDispatch() hook.
+
+When we call use useDispatch(),we don't pass any argument to it,but instead, this gives us back a dispatch function which you can execute.
+
+const dispatch = useDispatch();
+
+So abouve "dispatch" is a function.
+
+Now when we call that dispatch() function which will dispatch and action agains our Redux store.
