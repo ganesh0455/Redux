@@ -53,3 +53,10 @@ Now we will pass the reducer function as an argument to createStore(counterReduc
 if you want to change the store then pass the reducer function as an argument to createStore(counterReducer).
 
 Typically we can do different actions inside the same reducer based on the action type which we have dispatched.
+
+
+--------------------------------------------------------------------------------------------
+        How to use redux in react (How can we connect redux to the react app)
+--------------------------------------------------------------------------------------------
+For connecting react with redux we have to install a 3rd party package calledd "react-redux", 
+for that run this following command ---> npm install redux react-redux
