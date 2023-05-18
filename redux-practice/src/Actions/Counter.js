@@ -1,0 +1,4 @@
+export const INCREMENT = "INCREMENT";
+export const INCREMENT_BY_5 = "INCREMENT_BY_5";
+export const DECREMENT = "DECREMENT";
+export const TOGGLE_COUNTER_DISPLAY = "TOGGLE_COUNTER_DISPLAY";

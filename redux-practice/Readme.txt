@@ -188,3 +188,20 @@ This might look strange, but in the end, this ensures that in the counter compon
 This prop holds this function,so we can execute this function from inside the component thereafter.
 
 And when we do so, we will call dispatch and dispatch does action.
+
+
+---------------------------------------
+Attaching payloads to the actions
+---------------------------------------
+We only dispatched simple actions.They only had a type, nothing else.
+
+In reality, you often wanna dispatch actions that also carry an extra value. inthis case we will use action parameter in reducer function.
+
+---------------------------------------
+How to Work with Redux State Correctly
+---------------------------------------
+We always return a brand new state object which Redux will use to replace its existing state with.
+
+So the objects which we return in the reducer will not, and that's super important will not be merged with the existing state.
+They will overwrite the existing state.
+For avoiding that we need to take all previous state by spreading out all properties and update the value for existing key.
