@@ -72,3 +72,33 @@ Now how can we provide the store for components
 We have to import Provider at root component (App component) for keep available store to the all components.
 It is not mandatory to provide store to all components, but may be tha case where if state need all components the we should keep that store available to all components.
 We have to pass a store as prop on provider component to say which store we have to give to all components.
+
+
+----------------------------------------------------
+Using Redux data in React components
+----------------------------------------------------
+For displaying the data in our components from the store we have to get the data from store, for this we take a help from another hook called useSelector().
+There is also a useStore() hook but useSelector() is more powerfull.
+useSelector() will exctract the part of state from the state which we need.
+in Class based components we use "connect" method to connect redux to react instead of useSelector() hook.
+
+---------------
+useSelector()
+---------------
+Now we need to pass a function to the useSelector() which  is excecuted by redux of function which then basically determines which piece of data we want to extract from our store.
+
+Of course at the moment we have a very simple state.Just an object with a counter property.
+
+But in bigger applications,you will have more complex states with tons of different properties maybe nested objects and arrays and therefore being able to just get a slice, just a tiny part of that overall state object in a easy way is worth a lot.
+And that's what use selector allows us to do.
+
+For this we should pass a function to it,a function of which we'll receive the state managed by Redux and then we return the part of the state which you wanna extract.
+
+Now the great thing is that when you use use selector,React Redux will automatically set up a subscription to the Redux store for this component.
+So your component will be updated and will receive the latest counter automatically whenever that data changes in the Redux store.
+
+That's why use selector is a very useful hook and why it is the hook we use for getting data out of the store.
+
+If you ever would unmount this component if it would be removed from the DOM for whatever reason, React Redux would also automatically clear the subscription for you.
+
+So it manages that subscription for you behind the scenes.
