@@ -26,9 +26,9 @@ When we click on add to cart to button , it will dispatch(triggers) an action, h
 therefore redux will forwards an action to the reducer reads that description of desired operation and then that operation is performed by the reducer.
 
 Step 1 : Components dispatch actions , which describe what should be done, but don't do it directly,
-Step 2 : .Then those actions are forwarded to the reducer, the reducer then does what the action wants, the reducer to do.
-Step 3 : .And then the reducer, spits out a new state, which effectively will replace the existing state in that Central Data Store.
-Step 4 : .And when that happens, when that state in that data store is updated, subscribing components are notified, so that they can update their UI.
+Step 2 : Then those actions are forwarded to the reducer, the reducer then does what the action wants, the reducer to do.
+Step 3 : And then the reducer, spits out a new state, which effectively will replace the existing state in that Central Data Store.
+Step 4 : And when that happens, when that state in that data store is updated, subscribing components are notified, so that they can update their UI.
 That's how Redux works.
 
 
@@ -39,8 +39,8 @@ After creating a store what we have to procedd with...? What do we do with that 
 that store should manage some data and the data which it manages is in the end determined by the reducer function,because it's the reducer function which will produce new state snapshots.
 The reducer has to go of spitting out a new state snapshot whenever an action reaches it.And when we run this code for the first time,the reducer will also be executed with a default action,so to say, that should spit out the initial state.
 A reducer function is a standard JavaScript function,but it will it be called by the Redux library and it will then always receive two pieces of input,two parameters,
-    1.the old or existing state 
-    2.the action that was dispatched
+    1.The old or existing state 
+    2.The action that was dispatched
 And then this reducer function must return a certain output.It must always return a new state object.
 
 And therefore a reducer function should be a pure function.Which basically means that the same inputs,the same values for inputs always should produce exactly the same output.
@@ -51,3 +51,5 @@ Instead, a reducer should really just be a function that takes the given inputs,
 
 Now we will pass the reducer function as an argument to createStore(counterReducer), which means we are saying that only the counterReducer() function can change the state no other reducer haven't permittions to change the state.
 if you want to change the store then pass the reducer function as an argument to createStore(counterReducer).
+
+Typically we can do different actions inside the same reducer based on the action type which we have dispatched.

@@ -15,6 +15,7 @@ const counterReducer = (state=initialState, action) => {
             counter: state.counter-1
         };
     }
+    return state;
 };
 
 const store=redux.createStore(counterReducer);
