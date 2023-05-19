@@ -1,7 +1,5 @@
 import classes from './ClassCounter.module.css';
 import { Component } from 'react';
-import { DECREMENT, INCREMENT, INCREMENT_BY_5, TOGGLE_COUNTER_DISPLAY } from '../../Actions/Counter';
-import { connect } from "react-redux";
 
 class ClassCounter extends Component {
     constructor(props) {
