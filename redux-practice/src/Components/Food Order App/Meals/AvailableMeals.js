@@ -3,32 +3,32 @@ import Card from '../UI/Card';
 import MealItem from './MealItem/MealItem';
 import { useState,useEffect } from 'react';
 
-const DUMMY_MEALS = [
-    {
-        id: 'm1',
-        name: 'Fish Biryani',
-        description: 'Finest fish and spicee',
-        price: 10,
-    },
-    {
-        id: 'm2',
-        name: 'Mutton Biryani',
-        description: 'A indian specialty! spicee',
-        price: 20,
-    },
-    {
-        id: 'm3',
-        name: 'Veg Pullav',
-        description: 'Healthy...and green...',
-        price: 30,
-    },
-    {
-        id: 'm4',
-        name: 'Kabas',
-        description: 'Spicee chicken kababs',
-        price: 40,
-    },
-];
+// const DUMMY_MEALS = [
+//     {
+//         id: 'm1',
+//         name: 'Fish Biryani',
+//         description: 'Finest fish and spicee',
+//         price: 10,
+//     },
+//     {
+//         id: 'm2',
+//         name: 'Mutton Biryani',
+//         description: 'A indian specialty! spicee',
+//         price: 20,
+//     },
+//     {
+//         id: 'm3',
+//         name: 'Veg Pullav',
+//         description: 'Healthy...and green...',
+//         price: 30,
+//     },
+//     {
+//         id: 'm4',
+//         name: 'Kabas',
+//         description: 'Spicee chicken kababs',
+//         price: 40,
+//     },
+// ];
 
 const AvailableMeals = () => {
 
@@ -48,15 +48,15 @@ const AvailableMeals = () => {
         getMealsListItems();
     },[])
 
-    const mealsList = DUMMY_MEALS.map((meal) => (
-        <MealItem
-          id={meal.id}
-          key={meal.id}
-          name={meal.name}
-          description={meal.description}
-          price={meal.price}
-        />
-      ));
+    // const mealsList = DUMMY_MEALS.map((meal) => (
+    //     <MealItem
+    //       id={meal.id}
+    //       key={meal.id}
+    //       name={meal.name}
+    //       description={meal.description}
+    //       price={meal.price}
+    //     />
+    //   ));
 
       const mealsListFromAPI = mealsItemsList.map((meal) =>{
         return <MealItem 

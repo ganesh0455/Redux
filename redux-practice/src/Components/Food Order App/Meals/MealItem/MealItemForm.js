@@ -1,16 +1,14 @@
-import store from '../../../../store';
 import Input from '../../UI/Input';
 import classes from './MealItemForm.module.css';
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useRef, useState } from 'react';
-import { ADD_ITEM,TOTAL_CART_ITEMS, TOTAL_COST } from '../../../../Actions/Food';
+import { TOTAL_CART_ITEMS } from '../../../../Actions/Food';
 
 const MealItemForm = (props) => {
     const [amountIsValid,setAmountIsValid]=useState(true);
     const amountInputRef=useRef();
 
     const dispatch = useDispatch();
-    const totalCartItems = useSelector(store => store.totalCartItems);
 
     const submitHandler = event => {
         event.preventDefault();
